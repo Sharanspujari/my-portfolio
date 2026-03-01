@@ -9,7 +9,7 @@ export default function About() {
     { icon: Trophy, value: '20%', label: 'Performance Boost' },
     { icon: Users, value: '95%', label: 'Client Satisfaction' },
   ]
-
+console.log("auto deployee test")
   return (
     <section id="about" className="section-padding bg-dark/50">
       <div className="container-custom">
