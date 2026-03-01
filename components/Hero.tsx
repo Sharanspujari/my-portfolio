@@ -5,7 +5,7 @@ import { useState } from 'react'
 
 export default function Hero() {
   const [isLoadingResume, setIsLoadingResume] = useState(false)
-  const [resumeError, setResumeError] = useState(null)
+  const [resumeError, setResumeError] = useState('')
 
   // Simplified socialLinks without email href
   const socialLinks = [
@@ -30,7 +30,7 @@ export default function Hero() {
   const handleDownloadResume = async () => {
     try {
       setIsLoadingResume(true)
-      setResumeError(null)
+      setResumeError('')
 
       const response = await fetch('/sharanp_cv.pdf')
 
@@ -51,7 +51,7 @@ export default function Hero() {
     } catch (err) {
       console.error('Download error:', err)
       setResumeError('Failed to download resume')
-      setTimeout(() => setResumeError(null), 3000)
+      setTimeout(() => setResumeError(''), 3000)
     } finally {
       setIsLoadingResume(false)
     }
